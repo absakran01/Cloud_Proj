@@ -1,0 +1,99 @@
+:root {
+  --background-color: #f5f7fa;
+  --bs-primary: #1a3dc1;
+  --bs-primary-hover: #0f2fa3;
+  --bs-primary-light: #e0e7ff;
+  --text-color: #1f2937;
+  --font-base: 'Poppins', sans-serif;
+  --font-heading: 'Inter', sans-serif;
+}
+
+body {
+  font-family: var(--font-base);
+  background-color: var(--background-color);
+  color: var(--text-color);
+  font-weight: 300;
+  font-size: 1.125rem;
+  line-height: 1.6;
+  margin: 0;
+  padding: 0;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-heading);
+  font-weight: 700;
+  color: var(--bs-primary);
+  margin-bottom: 0.75rem;
+}
+
+.container-fluid-custom {
+  max-width: 1600px;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+/* Buttons */
+.btn {
+  display: inline-block;
+  padding: 0.75rem 1.5rem;
+  border-radius: 0.4rem; /* Rectangular with slightly rounded corners */
+  font-weight: 500;
+  font-size: 1rem;
+  cursor: pointer;
+  text-align: center;
+  transition: background 0.3s, box-shadow 0.3s, transform 0.2s;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+  border: none;
+}
+
+.btn-primary {
+  background-color: var(--bs-primary);
+  color: #fff;
+}
+
+.btn-primary:hover {
+  background-color: var(--bs-primary-hover);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+}
+
+.btn-outline-primary {
+  background-color: #fff;
+  color: var(--bs-primary);
+  border: 2px solid var(--bs-primary);
+}
+
+.btn-outline-primary:hover {
+  background-color: var(--bs-primary-light);
+  border-color: var(--bs-primary-hover);
+  color: var(--bs-primary-hover);
+}
+
+/* Pagination */
+.pagination {
+  --bs-pagination-color: var(--bs-primary);
+  --bs-pagination-active-bg: var(--bs-primary);
+  --bs-pagination-active-border-color: var(--bs-primary);
+}
+
+/* Home Section */
+.home {
+  background-color: var(--background-color);
+  padding: 4rem 2rem;
+  text-align: center;
+}
+
+.home-title {
+  position: relative;
+  font-size: 2.75rem;
+  font-weight: 700;
+  color: var(--bs-primary);
+  margin-bottom: 2rem;
+}
+
+div.col.mt-md-12 > h1{
+  text-decoration: none; 
+  font-size: larger;
+  color: black;
+  margin-left: 60px;
+}
