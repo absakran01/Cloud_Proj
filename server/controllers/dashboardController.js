@@ -197,7 +197,7 @@ exports.markTaskAsDone = async (req, res) => {
     const note = await Note.findById(noteId).where({ user: req.user.id });
     if (note) {
       note.taskDone = !note.taskDone;
-      console.log(note.taskDone);
+      // console.log(note.taskDone);
       await note.save();
       res.redirect("/dashboard");
     } else {
