@@ -24,6 +24,7 @@ exports.dashboard = async (req, res) => {
         $project: {
           title: { $substr: ["$title", 0, 30] },
           body: { $substr: ["$body", 0, 100] },
+          taskDone: 1
         },
       }
       ])
@@ -184,3 +185,26 @@ exports.dashboardSearchSubmit = async (req, res) => {
     console.log(error);
   }
 };
+
+
+/**
+ * GET /
+ * Mark Task as Done or Not Done
+ */
+exports.markTaskAsDone = async (req, res) => {
+  try {
+    const noteId = req.params.id;
+    const note = await Note.findById(noteId).where({ user: req.user.id });
+    if (note) {
+      note.taskDone = !note.taskDone;
+      console.log(note.taskDone);
+      await note.save();
+      res.redirect("/dashboard");
+    } else {
+      res.status(404).send("Note not found");
+    }
+  } catch (error) {
+    console.error("Error updating note status:", error);
+    res.status(500).send("Internal server error");
+  }
+}

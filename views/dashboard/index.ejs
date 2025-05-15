@@ -14,6 +14,15 @@
     <% if (notes.length > 0) { for(var i=0; i < notes.length; i++) { %>
       <div class="col-sm-3 mb-4">
         <div class="card border-primary" style="min-height: 210px">
+            <form action="/dashboard/markdone/<%= notes[i]._id %>" method="POST" class="position-absolute" style="top: 10px; right: 10px;">
+  <input 
+    type="checkbox" 
+    onchange="this.form.submit()" 
+    <%= notes[i].taskDone ? 'checked' : '' %> 
+    style="width: 24px; height: 24px; cursor: pointer;" 
+    title="Mark as done"
+  />
+</form>
           <a href="/dashboard/item/<%= notes[i]._id %>" class="card-body text-decoration-none">
             <h5 class="card-title"><%= notes[i].title %></h5>
             <p class="card-text"><%= notes[i].body %></p>
