@@ -1,6 +1,3 @@
-// abdulmajeed alsakran
-// 443015155
-
 
 require('dotenv').config();
 

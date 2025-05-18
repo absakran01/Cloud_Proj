@@ -18,7 +18,7 @@ passport.use(
         displayName: profile.displayName,
         firstName: profile.name.givenName,
         lastName: profile.name.familyName,
-        profileImage: profile.photos[0].value,
+        profileImage: profile.photos[0].value
       };
 
       try {
@@ -44,7 +44,7 @@ router.get(
 
 // Retrieve user data
 router.get(
-  "/google/callback",
+  "/auth/google/callback",
   passport.authenticate("google", {
     failureRedirect: "/login-failure",
     successRedirect: "/dashboard",
